@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "learn-angular-ad913": {
+      "hosting": {
+        "practice": [
+          "learn-angular-ad913"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "learn-angular-ad913"
+  }
+}
