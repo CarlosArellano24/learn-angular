@@ -13,16 +13,6 @@ import { environment } from '../environments/environment'
 
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAYUKtOH8SXNzOi5tL9Im7k4ZIUjlzzSHg",
-  authDomain: "learn-angular-ad913.firebaseapp.com",
-  projectId: "learn-angular-ad913",
-  storageBucket: "learn-angular-ad913.appspot.com",
-  messagingSenderId: "438285160964",
-  appId: "1:438285160964:web:d55ee034d4520e52061b51",
-  measurementId: "G-RJKDNFREJN"
-};
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +20,7 @@ const firebaseConfig = {
     BoardComponent
   ],
   imports: [
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -43,7 +34,6 @@ const firebaseConfig = {
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    provideFirebaseApp(() => initializeApp(firebaseConfig))
   ],
   providers: [],
   bootstrap: [AppComponent] 
