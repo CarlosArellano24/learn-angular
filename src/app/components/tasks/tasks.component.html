@@ -2,8 +2,9 @@
 <app-task-item 
   *ngFor="let task of tasks"
   [task]="task"
-  (onDeleteTask)="deleteTask(task)"
+  (onDeleteTask)="deleteTask($event)"
   (onToggleReminder)="toggleReminder(task)"
 >
+<!--In app-task-item, it doesn't matter if we use `$event` or `task`, it's same object-->
   {{ task.text }}
 </app-task-item>
