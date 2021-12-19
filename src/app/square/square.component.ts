@@ -3,12 +3,10 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-square',
   template: `
-  <button nbButton hero>{{ value }}</button>
-  <!--
-  <button nbButton *ngIf="value == null">{{ value }}</button>
-  <button nbButton status="success" *ngIf="value == 'X'">{{ value }}<button>
-  <button nbButton status="info" *ngIf="value == 'O'">{{ value }}<button>
-  -->
+  <!--<button nbButton hero>{{ value }}</button>-->
+  <button nbButton *ngIf="value === null">{{ value }}</button>
+  <button nbButton status="success" *ngIf="value == 'X'">{{ value }}</button>
+  <button nbButton status="info" *ngIf="value == 'O'">{{ value }}</button>
   `,
   styles: [`
     button {
@@ -19,5 +17,5 @@ import { Component, Input } from '@angular/core';
   `]
 })
 export class SquareComponent {
-  @Input() value: 'X' | 'O';  
+  @Input() value: any;  
 }
