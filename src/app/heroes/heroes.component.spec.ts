@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeroesComponent } from './heroes.component';
+import { Hero } from '../hero';
 
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
@@ -21,5 +22,9 @@ describe('HeroesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show hero name', () => {
+    expect(component.heroes).toBeDefined(); 
   });
 });

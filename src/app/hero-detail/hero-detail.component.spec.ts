@@ -1,4 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { HeroDetailComponent } from './hero-detail.component';
 
@@ -8,7 +9,8 @@ describe('HeroDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeroDetailComponent ]
+      declarations: [ HeroDetailComponent ],
+      imports: [ RouterTestingModule ]
     })
     .compileComponents();
   });
@@ -22,4 +24,8 @@ describe('HeroDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('start with hero as undefined', fakeAsync(() => {
+    expect(component.hero).toBeUndefined();
+  }));
 });
